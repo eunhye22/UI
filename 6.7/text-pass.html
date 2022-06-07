@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <!-- <form> 태그 하나가, 하나의 입력양식을 생성</form> -->
+
+    <!-- HTTP method : 하나의 form 양식의 데이터를 지정된 서버(action속성의 값> 프로그램에
+    보내는 -->
+    <form action="http://localhost:8080/processData" method="post">
+        아 이 디 : <input type='text' name="id"><br>    <!-- <br>: break line, 엔터키 효과 -->
+        비밀번호 : <input type='password' name="pw">
+
+        <p></p>
+
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+    </form>
+</body>
+
+</html>

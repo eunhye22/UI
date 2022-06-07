@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        /* CSS를 이용하여 아래에 생성한 테이블에 스타일(=디자인, 장식)을 적용 */
+
+        /* 그룹 선택자를 이용하여 여러 요소에 공통의 CSS 스타일 적용 */
+        table, tr, th, td {
+            /* 각 태그의 영역에 경계선 그리기 */
+            border: solid 3px rgba(244, 108, 221, 0.842);
+            /* 각 셀의 경계선의 여백을 하나로 합치기(collapsed) */
+            border-collapse: collapse;
+            /* 안쪽 여백 */
+            padding: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>KTX 열차 시간표</h3>
+    <!-- 화면의 구성요소로 테이블을 만들 때 사용하는 태그 -<table></table> -->
+    <table>
+        <!-- table row : 테이블의 각 행을 생성 -->
+        <tr>   
+            <!-- table header : 테이블의 각 컬럼 생성 -->
+            <th>출발</th>
+            <th>도착</th>
+            <th>객실</th>
+            <th>요금</th>
+        </tr>
+
+        <tr>
+            <!-- table dell data : 테이블의 각 셀의 데이터 지정 -->
+            <td>서울(17:25)</td>
+            <td>부산(20:07)</td>
+            <td>일반실</td>
+            <td>50,800원</td>
+        </tr>
+
+        <tr>
+            <td>서울(18:00)</td>
+            <td>부산(20:35)</td>
+            <td>특실</td>
+            <td>83,700원</td>
+        </tr>
+
+        <tr>
+            <td>서울(18:15)</td>
+            <td>부산(20:50)</td>
+            <td>일반실</td>
+            <td>50,800원</td>
+        </tr>
+
+    </table>
+</body>
+</html>

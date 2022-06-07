@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+
+        table, tr, th, td {
+            /* 각 태그의 영역에 경계선 그리기 */
+            border: solid 2px rgba(239, 239, 84, 0.842);
+            /* 각 셀의 경계선의 여백을 하나로 합치기(collapsed) */
+            border-collapse: collapse;
+            /* 안쪽 여백 */
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h3>일기예보</h3>
+
+    <table>
+        <tbody>
+        <tr>
+            
+            <th colspan="2" rowspan="2">지역</th>
+            <th colspan="2">27일(목)</th>
+            <th colspan="2">28일(금)</th>
+            <th colspan="2">29일(토)</th>
+        </tr>
+        <tr>
+            <td>오전</td>
+            <td>오후</td>
+            <td>오전</td>
+            <td>오후</td>
+            <td>오전</td>
+            <td>오후</td>
+        </tr>
+        <tr>
+            <td colspan="2">서울<br>경기도</td>
+            <td><img src='../6.7/shine.png'></td>
+            <td><img src='../6.7/shine.png'></td>
+            <td><img src='../6.7/shine.png'></td>
+            <td><img src='../6.7/rain.png'></td>
+            <td><img src='../6.7/rain.png'></td>
+            <td><img src='../6.7/rain.png'></td>
+        </tr>
+        <tr>
+            <td colspan="2">제주도</td>
+            <td><img src='../6.7/shine.png'></td>
+            <td><img src='../6.7/shine.png'></td>
+            <td><img src='../6.7/shine.png'></td>
+            <td><img src='../6.7/rain.png'></td>
+            <td><img src='../6.7/rain.png'></td>
+            <td><img src='../6.7/rain.png'></td>
+    </table>
+</body>
+</html>

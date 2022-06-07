@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All input elements defined in the HTML5 spec.</title>
+</head>
+
+<body>
+    
+    <form action="http://localhost:8080/serverProgram" method="post">
+        1. search: <input type="search" name="keywoed"><br>
+        2. tel: <input type="tel" name="tel" 
+                       pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+                       placeholder="000-0000-0000"><br>
+        3. url: <input type="url" name="url"><br>
+        4. email: <input type="email" name="email" required><br>        <!-- ** required - 필수입력 ** -->
+        5. date: <input type="date" name="today" disabled><br>          <!-- ** disabled - 입력불가상태 ** -->
+        6. month: <input type="month" name="month"><br>
+        7. week: <input type="week" name="week"><br>
+        8. time: <input type="time" name="now"><br>
+        9. datetime-local: <input type="datetime-local" name="localDT"><br>
+        10. number: <input type="number" name="age" min="0" max="120"><br>
+        11. range: <input type="range" name="height" min="50" max="250"><br>  <!--범위 미지정 시 0-100 -->
+        12. color: <input type="color" name="myColor"><br>
+        13. image: <input type="image" src="https://picsum.photos/id/684/100/100" name="myImage"><br> <!--이미지가 submit 역할을 한다.-->
+        14. textarea: <textarea name="lines" cols="30" row="30"></textarea><br> 
+        15. fieldset<br>
+
+            <fieldset>
+                <legend>Sign in</legend>
+                id: <input type="text" name="id"><br>
+                pw: <input type="password" name="pw"><br>
+            </fieldset>
+        
+        16. datalist<br>
+
+            My browser: <input list="browser" name="mybrowser">
+            <datalist id="browser">
+                <option value="Safari"></option>
+                <option value="Chrome"></option>
+                <option value="Edge"></option>
+            </datalist><br>
+
+        17. progress: <progress max="100" value="33" name="progress"></progress><br>
+        18. meter: <meter min="0" max="100" value="77" name="meter"></meter>     <!--17,18-파워쉘에서 수행해보니 정보가 전송되지 않음(표현식 역할)-->
+
+        <p></p>
+
+        <input type="submit" value="전송">
+
+    </form>
+</body>
+
+</html>
