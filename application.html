@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지원서 폼 구현하기</title>
+
+ <style>
+
+        table, tr, th, td {
+            /* 각 태그의 영역에 경계선 그리기 */
+            border: solid 2px ;
+            /* 각 셀의 경계선의 여백을 하나로 합치기(collapsed) */
+            border-collapse: collapse;
+            /* 안쪽 여백 */
+            padding: 8px;
+        }
+    </style>
+
+</head>
+</head>
+
+<body>
+    <form>
+        <h1>입사지원서</h1>
+        <table >
+            <tr>
+                <td rowspan="5" width="100">
+                    <center>사진</center>         
+                    <input type="file" name="photo" required>
+                </td>
+
+                <td>
+                    이름
+                </td>
+                <td>
+                    <input type="text" name="Name" required>
+                </td>
+                <td>
+                    생년월일
+                </td>
+                <td>
+                    <input type="date" name="birth" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    성별
+                </td>
+                <td>
+                    <input type="radio" name="gender" value="1"> 남
+                    <input type="radio" name="gender" value="2" checked> 여
+                </td>
+                <td>
+                    학력
+                </td>
+                <td>
+                    <input type="text" name="level" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    연락처
+                </td>
+                <td>
+                    <input type="tel" name="tel" 
+                        pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+                        placeholder="000-0000-0000" required>
+                </td>
+                <td>
+                    지원분야
+                </td>
+                <td>    
+                    <input list="department" name="dept" required>
+                    <datalist id="department">
+                        <option value="JAVA웹개발"></option>
+                        <option value="웹퍼블리셔"></option>
+                        <option value="UI개발"></option>
+                    </datalist>
+            </tr>
+            
+            <tr>
+                <td>
+                    이메일
+                </td>
+                <td colspan="3">
+                    
+                    <input type="text" name="email_id" required> @
+                    <select name="email_addr">
+                        <option value="">선택</option>
+                        <option value="1">naver.com</option>
+                        <option value="2">hanmail.net</option>
+                        <option value="3">gmail.com</option>
+                        <option value="4">직접입력</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    주소
+                </td>
+                <td colspan="3">
+                    <input type="text" name="address" size="50" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td height="100">
+                    <center>경력</center>
+                </td>
+                <td colspan="4">
+                    <textarea cols="80" rows="5" name="career"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td height="200" >
+                    <center>지원 동기</center>
+                </td>
+                <td colspan="4" >
+                    <textarea cols="80" rows="10" name="motive"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td height="100">
+                    <center>포부</center>
+                </td>
+                <td colspan="4">
+                    <textarea cols="80" rows="5" name="motive"></textarea>
+                </td>
+            </tr>
+        </table><br>
+        <input type="submit" value="제출">&nbsp;&nbsp;
+        <input type="reset" value="초기화">
+    </form>
+</body>
+
+</html>
