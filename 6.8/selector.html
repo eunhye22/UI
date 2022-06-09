@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        p { /* 1. 태그 선택자: 지정된 태그명과 일치하는 모든 태그를 찾아서 선택하라 */
+            font-size: 14px;    /*default size: 16px;*/
+            line-height: 180%;
+        }
+        /* 2. Id 선택자: #으로 시작. id 속성값은 현재 HTML문서에서 반드시 고유해야함 */
+        /* 고유한 한개의 요소(=태그)에 스타일 적용 */
+        #fly {
+            color: red;
+            font-weight: bold;
+        }
+        /* 3. 클래스 선택자: 도트(.)로 시작 */
+        /* 한 개 이상의 요소(=태그에 공통의 스타일 적용하고자 할 때 사용 */
+        .blue {
+            color: blueviolet;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>잠자리란?</h3>
+
+    <p><span id='fly'>Lorem</span> ipsum dolor sit amet, consectetur adipisicing elit. Suscipit sed culpa minima quia eos quasi officia, impedit animi iure nobis, optio quis nostrum corrupti autem veritatis! Nihil officia aliquam consequatur.</p>
+
+    <p>Lorem ipsum dolor, <span class='blue'>sit amet consectetur </span> adipisicing elit. Pariatur vero magni reiciendis debitis odio deleniti amet<span class='blue'> nam ipsam provident </span>earum iure esse eligendi quia expedita praesentium id minima, nisi ut?</p>
+</body>
+
+</html>
