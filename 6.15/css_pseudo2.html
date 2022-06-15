@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div {
+            width:200px;
+            height:100px;
+            color:blue;
+            background:green;
+            /* 불투명도(0.0  1.0) */
+            opacity: 0.9;
+        }
+
+        /* 가상 클래스 */
+        div:hover {
+            width:400;
+            height:50px;
+            color:red;
+            background:greenyellow;
+            opacity: 0.5;
+            /* 변이(전이) 효과 by CSS */
+            transition: all 1.5s linear 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h2>가상 선택자</h2>
+    <div>
+        가상 클래스를 이용한 애니메이션 효과
+    </div>
+</body>
+</html>
