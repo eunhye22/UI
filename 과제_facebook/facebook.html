@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Facebook - 로그인 또는 가입</title>
+    <!-- favicon 그냥 써보고싶어서.. -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* 전체 배경색 */
+        body {
+            background: #f0f2f5;
+        }
+        /* 윗부분 전체 설정 */
+        section {      
+            margin-left:400px;
+            padding-bottom: 110px;
+            padding-top: 70px;           
+        }
+        /* 로고 이미지 + 밑에 글귀 묶어서 설정 */
+        .left_section {           
+            width: 580px;
+            padding-top:115px;
+            padding-right: 30px;
+            display: inline-block;
+        }
+        /* 로고 밑 글귀 */
+        h2 {
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 32px;
+
+            width: 500px; 
+            margin: 0;
+            margin-left: 25px;
+        }
+        /* 로그인form박스 + 밑에 글귀 묶어서 설정 */
+        .right_section {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 40px;          
+        }
+
+        /* form박스 전체 스타일 */
+        fieldset {
+            /* align-items: center; */
+            background-color: #fff;
+            /* 박스 테두리 효과 */
+            border: none; /* 테두리 없애 */
+            border-radius: 8px; /* 모서리 둥글게 */
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);    /* 그림자 */
+
+            box-sizing: border-box;
+            margin-top: 50px;
+            /* width: 400px; */
+            height: 360px;
+        }
+
+        /* 이메일 입력부분 form */
+        input[type=text]{
+            font-size: 17px;
+            /* 박스 크기 조절 */
+            width:100%;
+            height:50px;
+            /* 테두리 */
+            border:1px solid rgb(217, 216, 216);
+            border-radius:4px;
+            outline: none;  /* 브라우저 기본 포커스 스타일 삭제 */
+            /* 박스 위치 조절 */
+            margin: 8px 0;
+            padding:8px;
+            box-sizing: border-box;
+}
+        /* 클릭했을 때 */
+        /* 그림자효과 주고, 불투명도 낮춰서 글자색 옅어지게 표현 */
+        input[type=text]:focus{
+            border-color:dodgerBlue;
+            box-shadow:0 0 3px 0 dodgerBlue;
+            opacity: 0.8;
+        }
+
+        /* 비번 입력부분form -> 위와 동일 */
+        input[type=password]{
+            font-size: 17px;
+
+            width:100%;
+            height:50px;
+
+            border:1px solid rgb(217, 216, 216);
+            border-radius:4px;
+            outline: none;
+
+            margin: 8px 0;
+            padding:8px;
+            box-sizing: border-box;
+        }
+
+        input[type=password]:focus{
+            border-color:dodgerBlue;
+            box-shadow:0 0 3px 0 dodgerBlue;
+            opacity: 0.8;
+        }
+
+        /* 로그인 버튼 -> '새 계정 만들기'버튼과 차별화 위해 id선택자 사용 */
+        #login {
+            /* 글자 */
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            /* 박스 */
+            background-color: #1877f2;
+            border: none; 
+            border-radius: 6px;
+            line-height: 48px;
+            /* 위치 */
+            margin-left:0px;
+            margin-top: 8px;
+            margin-bottom:15px;
+            width: 380px;
+        }
+        /* 마우스 갖다대면 색 진해짐 */
+        #login:hover {
+            background-color: rgb(19, 107, 222);
+        }
+
+        /* 비밀번호를 잊으셨나요? */
+        a {
+            color: #1877f2;
+            font-size: 14px;
+            text-decoration: none;  /* 링크 설정(underline) 삭제 */
+        }
+        /* 마우스 갖다대면 underline */
+        a:hover {
+            text-decoration:underline;
+        }
+
+        /* 구분선 좀 투명하게 */
+        hr {
+            opacity: 0.4;
+        }
+
+        /* '새 계정 만들기' 버튼 */
+        #new {
+            /* 글자 */
+            font-size: 17px;
+            color: white;
+            font-weight: bold;
+            /* 박스 */
+            background-color: #42b72a;
+            border: none;
+            border-radius: 6px;
+            /* 위치 */
+            line-height: 48px;
+            margin-left: 115px;
+            width: 150px;
+        }
+
+        #new:hover {
+            background-color: #379a23;
+        }
+
+        /* 유명인 어쩌고 */
+        p {
+            font-size: 14px;
+            margin: 30px;  
+        }
+
+        /* 페이지 만들기 부분 링크 */
+        p>a {
+            color:black;
+            font-weight: bold;
+        }
+
+        /* 하단 */
+        footer {
+            background-color: white;
+            padding-bottom:30px;
+        }
+
+        .image {
+            margin-left:400px;        
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 한 페이지를 section과 footer로 나눔 -->
+    <section>   <!-- 윗부분 전체를 section으로 하고 왼쪽 / 오른쪽 부분으로 세분화 -->  
+        
+        <div class="left_section">  <!-- 왼쪽 로고와 밑에 글귀를 하나로 묶음 -->
+            <div class="logo">
+                <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" width="301">
+            </div>
+
+            <h2>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</h2>
+        </div>
+        
+        <div class="right_section"> <!-- 오른쪽 로그인form박스와 밑에 글귀를 하나로 묶음 -->
+            <div class="login">
+                <form>
+                    <!-- 여러개의 form을 박스로 감싸 -->
+                    <fieldset>
+                        <!-- 이메일,비번 입력 박스 2개 -->
+                        <div class="input">
+                            <input type="text" name="email" id="email" autofocus="1" placeholder="이메일 또는 전화번호"><br>
+
+                            <input type="password" name="password" id="password" placeholder="비밀번호"><br>
+                        </div>
+
+                        <!-- 로그인 버튼 -->
+                        <button type="button" id="login" onclick="alert('다음에')" name="login_button">
+                            <center>로그인</center>
+                        </button><br>
+
+                        <!-- 비번 잊었니? -->
+                        <a href="https://ko-kr.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0"><center>비밀번호를 잊으셨나요?</center></a><br>
+
+                        <!-- 구분선 -->
+                        <hr><br>    
+                        
+                        <!-- 계정 생성 버튼 -->
+                        <button type="button" id="new" onclick="alert('다음에')" name="new">
+                            <center>새 계정 만들기</center>
+                        </button>
+                        
+                    </fieldset>
+                </form>
+                <!-- 밑에 글귀 (페이지 만들기 부분만 링크처리) -->
+                <p>유명인, 브랜드 또는 비즈니스를 위한 <a href="https://ko-kr.facebook.com/pages/create/?ref_type=registration_form">페이지 만들기.</a></p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 하단부 -->
+    <footer>
+        <div class="image">
+            <img src="하단부이미지.png">
+        </div>
+    </footer>
+
+</body>
+
+</html>
