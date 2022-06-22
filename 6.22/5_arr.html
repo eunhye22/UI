@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <script>
+        var city = ["서울", "부산", "대전"];
+
+        var joindata1 = city.join();
+        var joindata2 = city.join('-');
+        var joindata3 = city.join(' 그리고');
+
+        console.clear();
+        console.group('join');
+            console(`joindata1:${joindata1}`);
+            console(`joindata2:${joindata2}`);
+            console(`joindata3:${joindata3}`);
+        console.groupEnd();
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <script>
+        var arrdata = [];
+
+        function insertArr() {  // 함수선언1 : 배열에 새로운 원소를 추가(생성)
+            console.group('insertArr');
+            
+            for (let i=0; i<=99; i++) { 
+                arrdata[i] = i + 1;                 // 1-100 데이터 저장
+                document.write(arrdata[i] + " ");   // 데이터 출력
+            }//for
+
+            console.groupEnd();
+        }//insertArr
+
+        function delArr() { // 함수선언2 : 배열의 원소 초기화 (0으로)
+            console.group('delArr')
+
+            for (let i=0; i<arrdata.length; i++) {
+                if ( i%2 ==0) {                     // 홀수번째 데이터 삭제
+                    arrdata[i] =0;                  // 0으로 초기화
+                }//if
+                continue;   // for문의 증감식으로 이동
+            }//for
+
+            selectArr();       // 다른 함수호출
+
+            console.groupEnd();
+        }//delArr
+
+        function selectArr() {  // 함수선언3 : 배열의 순회
+            console.group('selectArr');
+
+            for (let i=0; i<arrdata.length; i++) { 
+                document.write(arrdata[i] + " ");   // 데이터 조회
+            }//for
+
+            console.groupEnd();
+        }//selectArr
+
+        // 여기에서 수행 시작됨
+
+        insertArr();    // 배열 데이터 생성 함수 호출
+    </script>
+
+    <p></p>
+
+    <!-- inline 방식의 자바스크립트 코드 설정 -->
+    <!-- 버튼을 마우스로 클릭했을 때, 지정된 함수를 호출 -->
+    <button type="button" onclick="javascript: delArr()">배열의 홀수 번째 데이터 초기화</button>
+</body>
+
+</html>
