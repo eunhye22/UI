@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <script>
+        console.clear(); console.group('11. Map');
+
+        const arr=[1,2,3,4,5,6,7,8,9,10];
+        console.log('original : ', arr);
+
+        function mapArr(value) {
+            return value*value;
+        } // mapArr
+
+        let maparr = arr.map(mapArr);
+        document.write("원래 배열 :" + arr + "<p/>");
+        document.write("map 메소드 적용 배열 :" + maparr + "<p/>");
+
+        console.groupEnd();
+
+    </script>
+</body>
+
+</html>
