@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+        <!-- <script src="https://use.fontawesome.com/releases/v6.1.1/js/all.js"></script>
+         -->
+         <script src="https://kit.fontawesome.com/85414244d6.js" crossorigin="anonymous"></script>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spring | Home</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@600&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Ubuntu:wght@700&display=swap');
+           
+           
+           
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+
+            body{
+                width:1920px;
+            }
+
+
+            /* 1번영역 시작 */
+
+
+            a{
+                color: inherit;
+                text-decoration:none;
+            }
+            a:visited{
+                color: inherit;
+                text-decoration:none;
+            }
+
+            .header_top{
+                width: 1176px;
+                height: 59px;
+      
+            }
+
+            .header_top img{
+                display: inline-block;
+                float: left;
+
+            }
+
+            .header_top ul{
+                list-style: none;
+            }
+
+            .header_top>ul>li{
+                float: left;
+            }
+
+
+            .top_list{
+                float: right;
+            }
+
+            .top_list>li>span{
+                display: inline-block;
+                height: 59px;
+                margin: 0px 5px 0px 25px;
+                line-height:54px;
+                font-family: 'Anek Latin', sans-serif;
+            
+            }
+            .header_toggle{
+                float: right;
+                line-height: 54px;
+                width: 60px;
+                position: relative;
+            }
+
+            .fas fa-angle-down{
+                padding: 0px;
+                color: gray;
+                font-weight: 100;
+            }
+
+            .not_arrows{
+                padding:0px 15px;
+            }
+            .not_arrows:hover{
+                color:rgb(109,179,063);
+            }
+
+            /* 드롭다운 메뉴 부분 */
+
+            .optionList{
+                visibility: hidden;
+                position: absolute;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.208); ;
+                margin-left: 20px;
+                width: 0px;
+                padding: 20px 0px;
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+
+            .optionListItem{
+                color:black;
+                padding: 8px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .top_list li:hover .optionList{
+                visibility: visible;
+                width: 150px;
+                opacity: 1;
+                
+            }
+            .optionListItem:hover {
+                color:rgb(109,179,063);
+            }
+
+            /* 드롭다운 메뉴 부분 */
+
+            
+            /* 토글 부분 */
+
+            .cb span{display:none;}
+
+            .toggle_inline{
+                border: 1px solid rgb(0, 0, 0);
+                height: 15px;
+                width: 40px;
+                left: 0px;
+                display: inline-block;
+                position: absolute;
+                top: 18px;
+                left: 10px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px;
+                transition: all 1s;
+                
+            }
+            .toggle_inline::after{
+                content: '';
+                height: 24px;
+                width: 24px;
+                background-color: rgb(0, 0, 0);
+                border: 1px solid black;
+                border-radius: 50%;
+                position:absolute; 
+                left: -1px;
+                top:-5px;
+                transition: all 1s;
+            }
+
+            #cb:checked + .toggle_inline{
+                background-color: black;
+                border: 1px solid white;
+                transition: all 1s;
+            }
+
+            #cb:checked + .toggle_inline::after{
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(179, 179, 179);
+                transition: all 1s;
+                left: 15px;
+            }
+            /* 토글 부분 */
+
+            /* -----------------------------------------------------2번 영역 시작 */
+
+
+            main {
+                height: 486px;   
+            }
+        
+            .mainbox {
+                width: 1903px; 
+                height: 403px;
+                background-color: #ebf2f2;
+            }
+
+            .center {
+                display: inline-block;
+                text-align: center;         
+            }
+            /* .maintext {
+                display: inline-block;
+                margin-left: 78px;
+                margin-right: 78px;
+                font-size:60px;      
+            } */
+            
+
+            #container01 { 
+                color:black;
+                font-size:36px; 
+                font-weight:bold; 
+                display: inline-block;
+                margin-left: 78px;
+                margin-right: 78px;
+                font-size:60px; 
+            } 
+
+            #flip { 
+                height:80px; 
+                overflow:hidden; 
+            }
+            /* hidden을 해줘야 모든 텍스트가 보여지는 것이
+            숨김이 되어 정해진 높이만큼만 보여짐 */
+
+            #flip > div > div { 
+                color:black; 
+                padding:4px 12px; 
+                height:45px; 
+                margin-bottom:45px; 
+                display:inline-block; 
+            } 
+
+            #flip div:first-child { 
+                animation: show 5s linear infinite; 
+            } 
+
+            /* 키프레임 값
+            0~100까지 텍스트의 움직임을 margin으로 조정
+            위에서 아래로 변화가 생기도록 margin-top으로 */
+            @keyframes show { 
+                0%  {margin-top:-270px;} 
+                5%  {margin-top:-180px;} 
+                33% {margin-top:-180px;} 
+                38% {margin-top:-90px;} 
+                66% {margin-top:-90px;} 
+                71% {margin-top:0px;} 
+                99.99% {margin-top:0px;} 
+                100% {margin-top:-270px;} 
+            }
+                        
+            .left {
+                float: left;
+            }
+
+            .right {
+                float: right;
+            }
+    
+            .button:link, .button:visited {         
+                color: black ;
+                font-weight: bold;
+                padding: 15px 25px;
+                text-align: center;
+                border: 2px solid black;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .button:hover {
+                background-color: black;
+                color: white;
+                transition: .7s;
+                
+            }
+
+
+            .box {
+                width: 100%;
+                display: inline-block;
+                height: 53px;
+                text-align: center;    
+                padding-top: 10px;           
+            }
+            .news {
+                display: inline-block;
+                font-family: Open Sans,sans-serif;
+                text-transform: uppercase;
+                flex-grow: 0;
+                font-size: .875rem;
+                border-radius: 20px;
+                color: #fff;
+                font-weight: 700;
+                background: #06c;
+                padding: 2px 15px;
+                margin: 5px 0px;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .link {
+                display: inline-block;
+            }
+            .link a {
+                text-decoration: none;
+                color: rgb(000,102,204);
+                position: relative;         /*부모 요소에는 position: relative */
+        
+                padding-bottom: 5px;        /*텍스트에서 밑줄 간격 띄워*/
+            }
+
+            .link a:before {
+                content: '';
+                position: absolute;         /*자식 요소에는 position: absolute */
+                background-color: rgb(000,102,204);
+                height: 2px;
+
+                width: 0; /* 첨에 안보이게*/
+                bottom: 0; /*a태그 아래에 위치*/
+                transition: 0.4s;
+            }
+
+            .link a:hover:before {
+                width: 100%;
+            }
+        
+            .divider {
+                font-weight: bold;
+                color: #b6d8d1;            
+            }
+
+            hr {           
+                background-color: #b6d8d1;
+                opacity: 0.3;
+
+                margin: 0;
+            }
+        
+
+            /* -----------------------------------------------------3번 영역 시작 */
+
+                    /* section */
+        .section1 {
+            max-width: 1180px;
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+        .sec1_h2 {
+            margin: 20px 0px;
+            padding-right: 750px;
+            font-size: 2.375rem;
+            font-family: 'Ubuntu', sans-serif;
+            
+        }
+        .sec1_h3 {
+            font-size: 1.5rem;
+        }
+        .sec1_block1:hover .sec1_h3 {
+            color: #6db33f;
+        }
+        .sec1_block2:hover .sec1_h3 {
+            color: #6db33f;
+        }
+
+        .sec1_block1:hover{
+            box-shadow: 2px 2px 2px;
+        }
+
+        .sec1_block2:hover{
+            box-shadow: 2px 2px 2px;
+        }
+
+        /* contanier */
+        .sec1_container1,
+        .sec1_container2 {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .sec1_container1 {
+            max-width: 1140px;
+        }
+        .sec1_container2 {
+            max-width: 850px;
+        }
+
+        /* block */
+        .sec1_block1,
+        .sec1_block2 {
+            border: 2px solid #EBF2F2;
+            box-sizing: border-box;
+            box-shadow: 2px 2px 3px -5px;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+            padding: 20px 25px;
+        }
+        .sec1_block1 {
+            width: 23.5%;
+        }
+        .sec1_block2 {
+            max-width: 280px;
+            width: 31.5%;
+        }
+        .sec1_context {
+            font-size: 1.1765rem;
+            line-height: 1.5rem;
+            letter-spacing: -0.07rem;
+        }
+
+        /* media */
+        @media (max-width: 950px) {
+            .sec1_container1,
+            .sec1_container2,
+            .sec1_block1,
+            .sec1_block2 {
+                display: block;
+                flex-wrap: wrap;
+                max-width: 100%;
+                width: 100%;
+                padding: auto;
+                text-align: center;
+                flex-direction: column;
+            }
+        }
+        /* -----------------------------------------------------4번 영역 시작 */
+
+        #section {
+            margin-bottom: 80px;
+            max-width: 1140px;
+            padding: 0 20px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        #flex {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1090px;
+            font-size: 100%;
+        }
+
+        #div {
+            display: block;
+            border-radius: 5px;
+            width: 69%;
+        }
+
+        #code {
+            background-color: #191e1e;
+            color: #fff;
+            display: block;
+            position: relative;
+            padding: 70px 55px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        #a,
+        #b,
+        #d {
+            color: #85d9eb;
+        }
+
+        #c,
+        #f {
+            color: #56e27a;
+        }
+
+        #tab {
+            padding-left: 20px;
+        }
+
+        #e,
+        #g {
+            color: #d4f088
+        }
+
+        #h2 {
+            font-size: 2.375rem;
+            font-weight: 900;
+            color: #191e1e;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Metropolis,sans-serif;
+        }
+
+        #right {
+            width: 25%;
+            color: #191e1e;
+            font-size: 100%;
+        }
+
+        #right>p {
+            line-height: 1.7em;
+            color: #333;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Open Sans,sans-serif;
+        }
+        p > a {
+            text-decoration: none;
+        }
+        #footer {
+            margin-bottom: 120px;
+            display: block;
+            font-size: 100%;
+        }
+
+        #fblock {
+            max-width: 1140px;
+            padding: 0 20px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        #emo {
+            height: 50px;
+            margin: 0 auto;
+            display: block;
+            max-width: 100%;
+        }
+
+        #quote {
+            padding-left: 0;
+            max-width: 760px;
+            margin: 1.875rem auto;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #6db33f;
+            line-height: 1.5em;
+            font-weight: 900;
+        }
+
+        #footer_2 {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            color: #191e1e;
+        }
+
+        #taylor {
+            height: 45px;
+            width: 45px;
+            margin-right: 15px;
+            border-radius: 50%;
+            max-width: 100%;
+
+        }
+
+        #detail {
+            font-size: .875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: rgb(000,102,204);
+            position: relative;         /*부모 요소에는 position: relative */
+    
+            padding-bottom: 5px;        /*텍스트에서 밑줄 간격 띄워*/
+        }
+        .link a::before {
+            content: '';
+            position: absolute;         /*자식 요소에는 position: absolute */
+            background-color: rgb(000,102,204);
+            height: 2px;
+
+            width: 0; /* 첨에 안보이게*/
+            bottom: 0; /*a태그 아래에 위치*/
+            transition: 0.4s;
+        }
+        .link a:hover:before {
+            width: 100%;
+        }
+
+        #link {
+        text-decoration: none;
+        color: rgb(000,102,204);
+        position: relative;
+
+        padding-bottom: 5px;
+        }
+
+        #link:before {
+            content: '';
+            position: absolute;
+            background-color: rgb(000,102,204);
+            height: 2px;
+
+            width: 0;
+            bottom: 0;
+            transition: 0.4s;
+        }
+
+        #link:hover:before {
+            width: 100%;
+        }
+
+        /* -----------------------------------------------------5번 영역 시작 */
+
+        .section_bottom{
+            background-color: #ebf2f2;
+            height : 348px;
+            width : 100%;
+            margin-top : 50px;
+        }
+
+        .three{
+            display : inline-block;
+            width : 300px;
+            margin-left : 70px;
+            margin-top : 70px;
+        }
+        .section_bottom_box{
+            display: flex;
+            margin-left: 350px;
+        }
+
+        .img{
+            margin-top : 63px;
+            margin-left : 20px;
+        }
+        
+        .three a {
+            text-decoration: none;
+            color: rgb(000,102,204);
+            position: relative;         /*부모 요소에는 position: relative */
+    
+            padding-bottom: 5px;        /*텍스트에서 밑줄 간격 띄워*/
+        }
+
+        .three a:before {
+            content: '';
+            position: absolute;         /*자식 요소에는 position: absolute */
+            background-color: rgb(000,102,204);
+            color: rgb(000,102,204);
+            height: 2px;
+
+            width: 0; /* 첨에 안보이게*/
+            bottom: 0; /*a태그 아래에 위치*/
+            transition: 0.4s;
+        }
+
+        .three a:hover:before {
+            color: rgb(000,102,204);
+            width: 100%;
+        }
+
+        /* -----------------------------------------------------6번 영역 시작 */
+
+        
+        .temp {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin-left: 363px;
+            margin-bottom: 20px;
+        }
+        .company__info {
+            color: #999999;
+            font-size: 13px;
+        }
+
+        .company__info--logo {
+            margin-left: 40px;
+            width: 160px;
+            height: 48px;
+        }
+
+
+        .company__info--policy a{
+            text-decoration: none;
+            color: #999999;
+        }
+
+        .company__info--policy  a:hover {
+            text-decoration: underline;
+            color: rgb(94, 113, 201);
+        }
+
+        .company__info--sns {
+            font-size: 25px;
+            text-align: center;
+            color: white;
+        }
+
+        .company__info--sns i {
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+        }
+
+        .company__info--sns i:hover {
+            cursor: pointer;
+            background-color: #6DB33F;
+        }
+
+        .company__info--policy{
+            margin-left: 363px;
+        }
+
+        .company__info--introduce{
+            margin-left: 363px;
+        }
+    </style>
+
+        <!-- /* ---------------------css 끝----------------------------------- */ -->
+
+    </head>
+
+    <body>
+        <center>
+        <div class="header_top">
+            <a href="https://spring.io/"><img src="./img/logo.PNG" alt=""></a>
+
+            <ul class="top_list">
+                <li>
+                    <span>Why Spring</span>
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="optionList ListA">
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span>Learn</span>
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="optionList ListB">
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span>Projects</span>
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="optionList ListC">
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                    </ul>
+                </li>
+
+                
+                <li>
+                    
+                    <span  class="not_arrows">
+                        <a href="https://spring.io/training">
+                            Training
+                        </a>
+                    </span>
+                    
+
+                </li>
+
+                
+                <li>
+                    
+                     <span class="not_arrows">
+                        <a href="https://spring.io/support">
+                            Support
+                        </a>
+                    </span>
+                    
+
+                </li>
+
+                
+                <li>
+                    <span>Community</span>
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="optionList ListD">
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                        <li class="optionListItem">Lorem.</li>
+                    </ul>
+                </li>
+
+                <div class="header_toggle">
+
+                    <div class='toggle_outline'>
+                        <input type="checkbox" name="" id="cb">
+                        <label for="cb" class="toggle_inline"><span></span></label>
+                    </div>
+
+                </div>
+
+            </ul>
+        </div>
+        </center>
+
+
+        <!-- -----------------------여기까지 1번 영역----------------- -->
+
+        <div class="mainbox">
+
+            <img src="img/왼쪽.png" id="left">
+            
+            <div class="center">      
+                
+                <div id=container01>
+                    Spring makes Java
+                    <div id=flip>
+                      <div><div>simple.</div></div>
+                      <div><div>modern.</div></div>
+                      <div><div>productive.</div></div>
+                      <div><div>reactive.</div></div>
+                      <div><div>cloud-ready.</div></div>
+                    </div>
+                </div>
+                <br><br>
+                <a href ="" class=button>WHY SPRING</a>&nbsp;&nbsp;&nbsp;
+                <a href="" class=button>QUICKSTART</a><h1><br><br></h1>
+            </div> 
+      
+            <img src="img/오른쪽.png" id="right_eh" height="400" width="600"> 
+           
+            <div class="box">
+                <span class="news">NEWS</span>
+        
+                <span class="link">
+                    &nbsp;&nbsp;&nbsp;<a href="https://www.brighttalk.com/webcast/14893/535189">Spring Cloud Gateway - commercial updates</a>
+                    &nbsp;&nbsp;<span class="divider"> | </span>&nbsp;&nbsp;
+                    <a href="https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement">Spring Framework CVE-2022-22965</a>
+                </span>
+            </div>
+        </div>       
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <!-- -----------------------여기까지 2번 영역----------------- -->
+
+
+        <center>
+        <section class="section1">
+            <div class="sec1_container">
+                <h2 class="sec1_h2">What Spring can do</h2>
+            </div>
+    
+            <div class="sec1_container1">
+                <div class="sec1_block1">
+                    <img src="img/microservices.png" width="120" height="120">
+                    <h3 class="sec1_h3">Microservices</h3>
+                    <p class="sec1_context">&nbsp;&nbsp; Quickly deliver &nbsp;&nbsp; production-grade features with independently evolvable microservices.</p>
+                </div>
+    
+                <div class="sec1_block1">
+                    <img src="img/reactive.png" width="120" height="120">
+                    <h3 class="sec1_h3">Reactive</h3>
+                    <p class="sec1_context">Spring's asynchronous, nonblocking architecture means you can get more from your computing resources.</p>
+                </div>
+    
+                <div class="sec1_block1">
+                    <img src="img/cloud.png" width="120" height="120">
+                    <h3 class="sec1_h3">Cloud</h3>
+                    <p class="sec1_context">Your code, any cloud─we’ve got you covered. Connect and scale your services, whatever your platform.</p>
+                </div>
+    
+                <div class="sec1_block1">
+                    <img src="img/webapps.png" width="120" height="120">
+                    <h3 class="sec1_h3">Web apps</h3>
+                    <p class="sec1_context">Frameworks for fast, secure, and responsive web applications connected to any data store.</p>
+                </div>
+            </div>
+    
+            <div class="sec1_container2">
+                <div class="sec1_block2">
+                    <img src="img/serverless.png" width="120" height="120">
+                    <h3 class="sec1_h3">Serverless</h3>
+                    <p class="sec1_context">The ultimate flexibility. Scale up on demand and scale to zero when there’s no demand.</p>
+                </div>
+    
+                <div class="sec1_block2">
+                    <img src="img/eventdriven.png" width="120" height="120">
+                    <h3 class="sec1_h3">Event Driven</h3>
+                    <p class="sec1_context">Integrate with your enterprise. React to business events. Act on your streaming data in realtime.</p>
+                </div>
+    
+                <div class="sec1_block2">
+                    <img src="img/batch.png" width="120" height="120">
+                    <h3 class="sec1_h3">Batch</h3>
+                    <p class="sec1_context">Automated tasks. Offline processing of data at a time to suit you.</p>
+                </div>
+            </div>
+        </section>
+        </center>
+        <!-- -----------------------여기까지 3번 영역----------------- -->
+
+        <section id="section" class="flex jc-detween">
+            <div id="flex">
+                <div id="div">
+                    <code id="code">
+                        <span id="a">@SpringBootApplication</span>
+                        <br>
+                        <span id="b">@RestController</span>
+                        <br>
+                        <span id="c">public</span> class DemoApplication {
+                        <br>
+                        <div id="tab">
+                            <br>
+                            <span id="d">
+                                @GetMapping
+                            </span>
+                            (<span id="e">
+                                "/helloworld"
+                            </span>)
+                            <br>
+                            <span id="f">
+                                public
+                            </span> String hello() {
+                                <div>
+                                    return
+                                    <span id="g">"Hello World!"</span>;
+                                </div>
+                            }
+                        </div>
+                    }
+                    </code>
+                </div>
+                <div id="right">
+                    <h2 id="h2">Level up your Java™ code</h2>
+                   
+                        <p class="link">
+                            with
+                            <a href="#">Spring Boot</a>
+                            in your app, just a few lines of code is all you need to start building services like a boss.
+                        </p>
+                        <p class="link">
+                            New to Spring? Try our simple
+                            <a href="#">quickstart guide</a>.
+                    
+                    </p>
+                </div>
+            </div>
+            </section>
+            <section id="footer">
+                <div id="fblock">
+                    <img src="https://spring.io/images/quote-08c1b712d6a6f2a891a0c524f236ca60.svg" id="emo">
+                    <blockquote id="quote">
+                        inally [Netflix's Java] libraries and frameworks were built in-house. I'm very proud to say, as of early
+                        2019, we've moved our platform almost entirely over to Spring Boot.”
+                    </blockquote>
+                    <div id="footer_2">
+                        <img src="https://spring.io/images/wicksell-dbd69bebcb1a4151a1fdb92809f4c830.jpg" id="taylor">
+                        <div>
+                            <span id="detail">Taylor Wicksell, Senior Software Engineer, Netflix</span>
+                            <br>
+                            <a href="https://www.youtube.com/watch?v=mln3_o6qlBo" id="link">Watch now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- -----------------------여기까지 4번 영역----------------- -->
+             <div class="section_bottom">
+                <div class="section_bottom_box">
+                    <div class="three">
+                        <h2>Get ahead</h2>
+                        <p>VMware offers training and certification to turbo-charge your progress.</p>
+                        <a href="https://spring.io/training" class="five">Learn more</a>
+                    </div>
+        
+                    <div class="three">
+                        <h2>Get support</h2>
+                        <p>Spring Runtime offers support and binaries for OpenJDK, Spring, and, Apache Tomcat&reg; in one simple subscription.</p>
+                        <a href="https://spring.io/support" class="five">Learn more</a>
+                    </div>
+        
+                    <div class="three">
+                        <h2>Upcoming events</h2>
+                        <p>Check out all the upcoming events in the Spring community.</p>
+                        <a href="https://spring.io/events" class="five">View all</a>
+                    </div>
+                    <div class="img">
+                        <img src="img/반원.JPG">
+                    </div>
+                </div>
+            </div>
+
+             <!-- -----------------------여기까지 5번 영역----------------- -->
+
+            <footer>
+
+                <div>
+                    <img src="img/GoodGame.PNG" alt="">
+                </div>
+
+
+                <div id="company">
+        
+                    <div class="temp">
+                        <div class="company__info--logo">
+                            <img src="https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg" alt="">
+                        </div>
+        
+                        <span class="company__info--sns">
+                            <i class="fab fa-youtube" style="margin-right: 40px;"></i>
+        
+                            <i class="fab fa-github"></i>
+                        </span>
+                    </div>
+                        
+                        <div class="company__info--policy">
+                            <p>© 2022
+                                <a href="#">VMware</a>, Inc. or its affiliates.
+                                <a href="#">Terms of Use</a>
+                                • <a href="#">Privacy</a>
+                                • <a href="#">Trademark Guidelines</a>
+                                • <a href="#">Your California Privacy Rights</a>
+                                • <a href="#">쿠키 설정</a>
+                            </p>
+                        </div>
+        
+                        <div class="company__info--introduce">
+                            <p class="">
+                                Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra™, and Apache Geode™ are trademarks or registered<br>
+                                trademarks of the Apache Software Foundation in the United States and/or other countries. Java™, Java™ SE, Java™ EE, and<br>
+                                OpenJDK™ are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in<br>
+                                the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other<br>
+                                countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web<br>
+                                Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and<br>
+                                copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may<br>
+                                be trademarks of their respective owners.
+                            </p>
+                        </div>
+                        
+        
+                    </div>
+        
+                </div>
+            </footer>
+
+    </body>
+
+</html>
